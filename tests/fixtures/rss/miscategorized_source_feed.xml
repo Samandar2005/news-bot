@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0">
+    <channel>
+        <title><![CDATA[Test Feed]]></title>
+        <description><![CDATA[Feed whose configured default category does not match its content]]></description>
+        <link>http://example.test</link>
+        <item>
+            <title><![CDATA[NASA announces new Mars mission timeline for rocket launch]]></title>
+            <description><![CDATA[The space station crew will prepare a new satellite for orbit as part of the mission.]]></description>
+            <link>http://example.test/articles/space-1</link>
+            <guid isPermaLink="false">http://example.test/articles/space-1</guid>
+            <pubDate>Thu, 20 Aug 2026 10:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

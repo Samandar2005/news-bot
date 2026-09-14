@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0">
+    <channel>
+        <title><![CDATA[Second Outlet]]></title>
+        <description><![CDATA[Same story as miscategorized_source_feed.xml, reworded by a different outlet]]></description>
+        <link>http://example.test</link>
+        <item>
+            <title><![CDATA[NASA has announced a new timeline for its Mars mission and rocket launch]]></title>
+            <description><![CDATA[Space station crew members will prepare a satellite for orbit as part of the mission, officials confirmed.]]></description>
+            <link>http://example.test/articles/space-2</link>
+            <guid isPermaLink="false">http://example.test/articles/space-2</guid>
+            <pubDate>Thu, 20 Aug 2026 11:30:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

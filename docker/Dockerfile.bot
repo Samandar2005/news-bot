@@ -1,0 +1,23 @@
+# Telegram bot (aiogram). Talks to the backend over HTTP — see spec
+# Phase 8.2 — so it only needs shared/ for config/enums, not the ORM models
+# themselves.
+
+FROM python:3.12-slim AS base
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY pyproject.toml ./
+COPY shared ./shared
+COPY bot ./bot
+
+RUN pip install --no-cache-dir -e .
+
+CMD ["python", "-m", "bot.main"]

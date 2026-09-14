@@ -1,0 +1,29 @@
+# Celery worker + beat. Needs pipeline/ (the actual collection/processing/
+# scoring logic) and shared/ (models + config) since tasks call the service
+# layer directly against the DB rather than through the backend's HTTP API
+# — see spec Phase 8.2 for why.
+
+FROM python:3.12-slim AS base
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY pyproject.toml ./
+COPY shared ./shared
+COPY pipeline ./pipeline
+COPY workers ./workers
+COPY backend ./backend
+
+RUN pip install --no-cache-dir -e .
+
+# Default command; overridden in docker-compose.yml to add --beat on the
+# single-worker MVP setup (a dedicated beat container is a v2 concern once
+# there's more than one worker instance).
+CMD ["celery", "-A", "workers.celery_app", "worker", "--loglevel=INFO"]

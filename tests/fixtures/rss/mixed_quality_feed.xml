@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Mixed Quality Test Feed</title>
+        <description>Some entries missing link or title</description>
+        <link>http://example.test/mixed</link>
+        <item>
+            <title>Good Entry One</title>
+            <description>&lt;p&gt;This is &lt;b&gt;valid&lt;/b&gt; HTML content.&lt;/p&gt;</description>
+            <link>http://example.test/articles/1</link>
+            <pubDate>Thu, 20 Aug 2026 10:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <!-- no title -->
+            <description>An entry with no title should be skipped.</description>
+            <link>http://example.test/articles/2</link>
+            <pubDate>Thu, 20 Aug 2026 11:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Entry with no link</title>
+            <description>An entry with no link should be skipped.</description>
+            <pubDate>Thu, 20 Aug 2026 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Good Entry Two, No Date</title>
+            <description>Valid entry but no pubDate at all.</description>
+            <link>http://example.test/articles/4</link>
+        </item>
+    </channel>
+</rss>

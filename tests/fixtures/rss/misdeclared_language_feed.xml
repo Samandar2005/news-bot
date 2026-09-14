@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0">
+    <channel>
+        <title><![CDATA[Test Feed]]></title>
+        <description><![CDATA[Feed whose configured language does not match its actual content]]></description>
+        <link>http://example.test</link>
+        <item>
+            <title><![CDATA[Сегодня в Узбекистане резко поднялась температура воздуха]]></title>
+            <description><![CDATA[В Ташкенте открылась новая линия метро, сообщили в мэрии города сегодня утром.]]></description>
+            <link>http://example.test/articles/ru-1</link>
+            <guid isPermaLink="false">http://example.test/articles/ru-1</guid>
+            <pubDate>Thu, 20 Aug 2026 10:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
