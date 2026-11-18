@@ -39,7 +39,11 @@ async def engine():
 async def session(engine) -> AsyncGenerator[AsyncSession, None]:
     connection = await engine.connect()
     transaction = await connection.begin()
-    session_factory = async_sessionmaker(bind=connection, expire_on_commit=False)
+    session_factory = async_sessionmaker(
+        bind=connection,
+        expire_on_commit=False,
+        join_transaction_mode="create_savepoint",
+    )
     async_session = session_factory()
 
     try:
